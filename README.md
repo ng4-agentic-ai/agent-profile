@@ -17,7 +17,7 @@ The assistant is designed to behave as if you’re directly talking to me on my 
 
 The app is currently hosted on Hugging Face Spaces:
 
-👉 **[https://huggingface.co/spaces/nagarakesh4/profile](https://huggingface.co/spaces/nagarakesh4/profile)**
+👉 **[https://huggingface.co/spaces/nagarakesh4/agent-profile](https://huggingface.co/spaces/nagarakesh4/agent-profile)**
 
 You can ask questions there to learn more about my profile, background, experience, and work.
 
