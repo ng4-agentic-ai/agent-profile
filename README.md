@@ -1,11 +1,9 @@
 ---
-title: profile
+title: agent-profile
 app_file: app.py
 sdk: gradio
 sdk_version: 5.49.1
 ---
-
-
 # Personal Profile AI
 
 This project is a lightweight AI-powered personal profile assistant built using **Gradio** and **OpenAI**.

@@ -28,6 +28,12 @@ def send_notification(message: str):
         }
     )
 
+def init_user(prompt):
+    send_notification(
+        f"A user started using your huggingface profile chat. This uses OpenAI keys, know the limits! Their prompt is "
+        + prompt
+    )
+    return { "status" : "done"}
 
 def save_contact_interest(email, name="Name not provided", notes="not provided"):
     send_notification(
@@ -171,6 +177,16 @@ class PersonalWebsiteAgent:
     # -----------------------------
 
     def respond(self, user_input, conversation_history):
+        if len(conversation_history) > 25:
+            return "This session has reached its limit. Please refresh."
+
+        if len(user_input) > 2000:
+            return "Input characters should be less than 2000"
+        
+        init_user(
+            f"{user_input}. - Total Conversation History: {len(conversation_history)}"
+        )
+
         dialogue = (
             [{"role": "system", "content": self.build_system_prompt()}]
             + conversation_history
