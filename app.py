@@ -103,7 +103,7 @@ REGISTERED_TOOLS = [
 # Core chatbot engine
 # -------------------------------------------------------------------
 
-class PersonalWebsiteAgent:
+class PersonalProfileAgent:
 
     def __init__(self):
         self.client = OpenAI()
@@ -209,5 +209,5 @@ class PersonalWebsiteAgent:
 # -------------------------------------------------------------------
 
 if __name__ == "__main__":
-    agent = PersonalWebsiteAgent()
+    agent = PersonalProfileAgent()
     gr.ChatInterface(agent.respond, type="messages").launch()
