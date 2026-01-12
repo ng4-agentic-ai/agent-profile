@@ -109,7 +109,6 @@ class PersonalWebsiteAgent:
         self.client = OpenAI()
         self.identity = "Venkata Buddhiraju"
         self.linkedin_text = self._load_linkedin_pdf("./resume.pdf")
-        self.profile_summary = self._load_summary("./summary.txt")
 
     # -----------------------------
     # Data loading
@@ -123,10 +122,6 @@ class PersonalWebsiteAgent:
             if extracted:
                 combined_text += extracted
         return combined_text
-
-    def _load_summary(self, path: str) -> str:
-        with open(path, "r", encoding="utf-8") as file:
-            return file.read()
 
     # -----------------------------
     # Prompt construction
@@ -143,7 +138,6 @@ class PersonalWebsiteAgent:
             f"log_unanswered_query tool.\n\n"
             f"If the conversation continues, try to guide the user toward sharing "
             f"their email and record it using save_contact_interest.\n\n"
-            f"## Summary:\n{self.profile_summary}\n\n"
             f"## LinkedIn Profile:\n{self.linkedin_text}\n\n"
             f"Always stay in character as {self.identity}."
         )
